@@ -29,18 +29,18 @@ class App extends React.Component {
     }
     render () {
       return (
-        // <a-scene embedded arjs='sourceType: webcam;'>
-        //   <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-        //   <a-marker-camera preset='hiro'></a-marker-camera>
-        // </a-scene>
-        <Scene embedded={true} arjs='sourceType: webcam;'>
-           <Entity 
-           geometry={{primitive: 'box'}}
-           position={{x:0,y:0.5,z:0}}
-           material={{opacity:0.5}}>
-            </Entity> 
-            <a-marker-camera preset='hiro'></a-marker-camera>
-        </Scene>
+        <a-scene embedded arjs='sourceType: webcam;'>
+          <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+          <a-marker-camera preset='hiro'></a-marker-camera>
+        </a-scene>
+        // <Scene embedded={true} arjs='sourceType: webcam;'>
+        //    <Entity 
+        //    geometry={{primitive: 'box'}}
+        //    position={{x:0,y:0.5,z:0}}
+        //    material={{opacity:0.5}}>
+        //     </Entity> 
+        //     <a-marker-camera preset='hiro'></a-marker-camera>
+        // </Scene>
       );
     }
   }
