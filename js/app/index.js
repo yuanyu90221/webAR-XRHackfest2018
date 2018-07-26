@@ -1,5 +1,6 @@
-import 'aframe-animation-component';
-import 'aframe-particle-system-component';
+// import 'aframe'; 
+// import 'aframe-animation-component';
+// import 'aframe-particle-system-component';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -29,18 +30,16 @@ class App extends React.Component {
     }
     render () {
       return (
-        <a-scene embedded arjs='sourceType: webcam;'>
-          <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-          <a-marker-camera preset='hiro'></a-marker-camera>
-        </a-scene>
-        // <Scene embedded={true} arjs='sourceType: webcam;'>
-        //    <Entity 
-        //    geometry={{primitive: 'box'}}
-        //    position={{x:0,y:0.5,z:0}}
-        //    material={{opacity:0.5}}>
-        //     </Entity> 
-        //     <a-marker-camera preset='hiro'></a-marker-camera>
-        // </Scene>
+        <Scene arjs='trackingMethod: best;'>
+            <Entity primitive='a-marker' preset="hiro">
+              <Entity
+              geometry={{primitive: 'box', width: 2}}
+              material={{color:'red', roughness: 0.5}}
+              scale={{x: 2, y: 2, z: 2}}
+              position={{x: 0, y: 0, z: -5}}/>
+            </Entity>
+            <Entity primitive='camera'/>
+        </Scene>
       );
     }
   }
